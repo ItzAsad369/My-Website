@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Untitled</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love of My Life</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://i.postimg.cc/HjZBcn71/image.jpg'); /* Hearts background */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            transition: background-image 0.5s ease-in-out;
+        }
+        h1 {
+            font-size: 3em;
+            color: #fff;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            margin-top: 15px;
+        }
+        #name-display {
+            font-size: 2em;
+            color: #fff;
+            margin-top: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        #cuteButton {
+            display: none; /* Initially hidden */
+        }
+    </style>
+</head>
+<body>
+    <h1>Who is the love of my life?</h1>
+    <button onclick="generateName()">Find out?</button>
+    <div id="name-display">Press the button to get a name!</div>
+    <button id="cuteButton">Awh! How cute 🥹</button> <!-- New button -->
+
+    <script>
+        function generateName() {
+            const names = ["Sophie", "Jessica", "Emily", "Olivia", "Lucy"];
+            const displayElement = document.getElementById("name-display");
+            const cuteButton = document.getElementById("cuteButton");
+            let index = 0;
+
+            const interval = setInterval(() => {
+                if (index < names.length) {
+                    displayElement.textContent = names[index];
+                    index++;
+                } else {
+                    clearInterval(interval);
+                    displayElement.textContent = "Amy Victoria Middleditch <3";
+                    document.body.style.backgroundImage = "url('https://i.postimg.cc/tn5bky3x/image.jpg')"; // Image of you and her
+                    cuteButton.style.display = "inline-block"; // Show the "Awh! How cute 🥹" button
+                }
+            }, 800); // Name changes every 0.8 seconds for 4 seconds total
+        }
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
